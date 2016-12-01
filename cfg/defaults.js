@@ -26,23 +26,27 @@ function getDefaultModules() {
     loaders: [
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader'
+        loader: 'style-loader!css-loader?importLoaders=1!postcss-loader'
       },
       {
         test: /\.sass/,
-        loader: 'style-loader!css-loader!sass-loader?outputStyle=expanded&indentedSyntax'
+        loader: 'style-loader!css-loader?importLoaders=1!postcss-loader!sass-loader?outputStyle=expanded&indentedSyntax'
       },
       {
         test: /\.scss/,
-        loader: 'style-loader!css-loader!sass-loader?outputStyle=expanded'
+        loader: 'style-loader!css-loader?importLoaders=1!postcss-loader!sass-loader?outputStyle=expanded'
       },
       {
         test: /\.less/,
-        loader: 'style-loader!css-loader!less-loader'
+        loader: 'style-loader!css-loader?importLoaders=1!postcss-loader!less-loader'
       },
       {
         test: /\.styl/,
-        loader: 'style-loader!css-loader!stylus-loader'
+        loader: 'style-loader!css-loader?importLoaders=1!postcss-loader!stylus-loader'
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
       },
       {
         test: /\.(png|jpg|gif|woff|woff2)$/,
